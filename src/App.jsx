@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import "./App.css";
 
 const App = () => {
-  const [query, setQuery] = useState("");
+  const queryRef = useRef(""); // Use useRef instead of useState for query
   const [images, setImages] = useState([]);
 
   const handleSearch = async (e) => {
@@ -15,7 +15,7 @@ const App = () => {
       const response = await axios.get(
         `https://api.unsplash.com/search/photos`,
         {
-          params: { query: query },
+          params: { query: queryRef.current.value }, // Use the ref value
           headers: {
             Authorization: `Client-ID ${accessKey}`,
           },
@@ -28,23 +28,21 @@ const App = () => {
   };
 
   return (
-    <div className="app container">
+    <div className="app">
       <h1 className="heading">Unsplash Image Search</h1>
-      <form onSubmit={handleSearch} className="js-form">
+      <form onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Search for images..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="search-input js-search-input"
+          ref={queryRef} // Attach ref to the input element
         />
 
-        <button type="submit" className="btn">
+        <button type="submit">
           <FaSearch /> Search
         </button>
       </form>
 
-      <div className="image-grid search-results js-search-results">
+      <div className="image-grid">
         {images.map((image) => (
           <div key={image.id} className="image-item">
             <img src={image.urls.small} alt={image.alt_description} />
