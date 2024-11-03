@@ -28,16 +28,17 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className="app card">
       <h1 className="heading">Unsplash Image Search</h1>
       <form onSubmit={handleSearch}>
         <input
+        className="form-field"
           type="text"
           placeholder="Search for images..."
           ref={queryRef} // Attach ref to the input element
         />
 
-        <button type="submit">
+        <button type="submit" className="btn">
           <FaSearch /> Search
         </button>
       </form>
