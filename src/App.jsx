@@ -37,16 +37,17 @@ const App = () => {
           placeholder="Search for images..."
           ref={queryRef} // Attach ref to the input element
         />
-
+<div className="btn-container">
         <button type="submit" className="btn">
           <FaSearch /> Search
         </button>
+        </div>
       </form>
 
       <div className="image-grid">
         {images.map((image) => (
           <div key={image.id} className="image-item">
-            <img src={image.urls.small} alt={image.alt_description} />
+            <img className="img" src={image.urls.small} alt={image.alt_description} />
           </div>
         ))}
       </div>
