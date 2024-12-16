@@ -24,6 +24,44 @@
     --color-btn-bg-hover: hsl(230deg, 50%, 45%);
     --color-btn-border: #000;
     --radius-btn-hover: 16px;
+
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+a {
+    font-weight: 500;
+    color: inherit;
+    text-decoration: inherit;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1.1;
+    color: tomato;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    button {
+        background-color: #f9f9f9;
+    }
 }
 
 /* CSS reset */
@@ -46,12 +84,9 @@ body {
     font-weight: 400;
     display: flex;
     flex-direction: column;
-}
-
-.app {
-    text-align: center;
-    padding: 20px;
-    align-items: center;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 .heading {
@@ -59,119 +94,6 @@ body {
     margin-bottom: 2rem;
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-input {
-    width: 300px;
-    padding: 10px;
-    border: 2px solid var(--color-input-border);
-    border-radius: 5px;
-    margin-bottom: 15px;
-    line-height: 1.428;
-}
-
-.form-field {
-    display: block;
-    width: 100%;
-    padding: 8px 16px;
-    line-height: 25px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: inherit;
-    border-radius: 6px;
-    -webkit-appearance: none;
-    color: var(--color-text-input);
-    border: 1px solid var(--color-input-border);
-    background: var(--color-input-bg);
-    transition: border 0.3s ease;
-}
-
-.form-field::-moz-placeholder {
-    color: var(--color-input-placeholder);
-}
-
-.form-field:-ms-input-placeholder {
-    color: var(--color-input-placeholder);
-}
-
-.form-field::placeholder {
-    color: var(--color-input-placeholder);
-}
-
-.form-field:focus {
-    outline: none;
-    border-color: var(--color-input-border-focus);
-}
-
-.btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    background: white;
-    border: solid 2px var(--color-btn-border);
-    padding: .375em 1.125em;
-    font-size: 1rem;
-}
-
-.btn {
-    font-size: 2rem;
-    background: var(--color-btn-bg);
-    color: var(--color-btn-text);
-    box-shadow: 0 0px 0px var(--color-btn-shadow);
-    transform: translateY(0);
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-
-    --dur: .15s;
-    --delay: .15s;
-    --radius: var(--radius-btn-hover);
-
-    transition:
-        border-top-left-radius var(--dur) var(--delay) ease-out,
-        border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out,
-        border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out,
-        border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out,
-        box-shadow calc(var(--dur) * 4) ease-out,
-        transform calc(var(--dur) * 4) ease-out,
-        background calc(var(--dur) * 4) steps(4, jump-end);
-}
-
-.btn:hover,
-.btn:focus {
-    box-shadow: 0 4px 8px var(--color-btn-shadow);
-    transform: translateY(-4px);
-    background: var(--color-btn-bg-hover);
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-}
-
-.btn {
-    font-family: "Quattrocento", serif;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    border: 1px solid var(--color-group-bg-focus);
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
-    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-        inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-}
-
-.btn:focus {
-    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-        0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-        0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-    outline: 0;
-}
 
 .img {
     border-radius: 1rem;
@@ -188,4 +110,97 @@ button {
     margin: 0 auto;
     max-width: 90%;
     padding: 3rem 0;
+}
+
+.search-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centers horizontally */
+    margin: 0 auto;
+    /* Ensures it's centered in the parent container */
+}
+
+.form-field {
+    width: 300px;
+    /* Adjust the width as needed */
+    border: 2px solid #ff765b;
+    border-right: none;
+    padding: 5px;
+    height: 26px;
+    /* Adjust height to match button */
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.form-field:focus {
+    color: #ff765b;
+}
+
+.search-button {
+    width: 30px;
+    /* Adjust the width to match input */
+    height: 27px;
+    /* Matches the height of the input */
+    border: 1px solid #ff765b;
+    background: #ff765b;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 0.88rem;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers content horizontally */
+    justify-content: center;
+    /* Centers content vertically */
+    min-height: 100vh;
+    /* Full viewport height for vertical centering */
+    text-align: center;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.image-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align overlay content to the top */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 1rem;
+}
+
+.image-item:hover .overlay {
+    opacity: 1;
+}
+
+.photographer-name {
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 10px;
+    /* Add some spacing from the top */
+    text-align: center;
+}
+
+.photographer-name:hover {
+    text-decoration: underline;
 }

@@ -61,19 +61,19 @@ const App = () => {
   return (
     <div className="app card">
       <h1 className="heading">Unsplash Image Search</h1>
-      <form onSubmit={handleSearch}>
-        <input
-          className="form-field"
-          type="text"
-          placeholder="Search for images..."
-          ref={queryRef}
-        />
-        <div className="btn-container">
-          <button type="submit" className="btn">
-            <FaSearch /> Search
+      <div className="wrap">
+        <form className="search-box" onSubmit={handleSearch}>
+          <input
+            className="form-field"
+            type="text"
+            placeholder="Search for images..."
+            ref={queryRef}
+          />
+          <button type="submit" className="search-button">
+            <FaSearch />
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
 
       <div className="image-grid">
         {images.map((image, index) => {
@@ -85,6 +85,16 @@ const App = () => {
                   src={image.urls.small}
                   alt={image.alt_description}
                 />
+                <div className="overlay">
+                  <a
+                    href={image.user.links.html}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="photographer-name"
+                  >
+                    {image.user.name}
+                  </a>
+                </div>
               </div>
             );
           }
@@ -95,6 +105,16 @@ const App = () => {
                 src={image.urls.small}
                 alt={image.alt_description}
               />
+              <div className="overlay">
+                <a
+                  href={image.user.links.html}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="photographer-name"
+                >
+                  {image.user.name}
+                </a>
+              </div>
             </div>
           );
         })}
