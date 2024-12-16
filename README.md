@@ -6,9 +6,9 @@ Whether you're looking for inspiration, specific visuals, or simply browsing, my
 
 [![CodeFactor](https://www.codefactor.io/repository/github/codelikeagirl29/unsplash-react/badge)](https://www.codefactor.io/repository/github/codelikeagirl29/unsplash-react)
 
-> see live site [here](https://unsplash-react-nine.vercel.app/)
+> see live site [here](https://unsplash-img-search-react.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ce8a306e-f188-4fd4-9c67-b71e2bb919c4/deploy-status)](https://app.netlify.com/sites/unsplash-search-site/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8dadd2e3-fe29-442f-a693-c27e5415c2ee/deploy-status)](https://app.netlify.com/sites/unsplash-img-search-react/deploys)
 
 ## Screenshot
 
